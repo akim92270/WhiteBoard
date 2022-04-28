@@ -1,4 +1,4 @@
-package BeginnerToAdvanced;
+package _16_questions_BeginnerToAdvanced;
 
 public class Solve {
     /* Question 1
