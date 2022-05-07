@@ -298,22 +298,19 @@ public class Solutions {
     eo o!
      */
 
-    public static String consonants(String str){
-        //aeiou
+    public static String consonants1(String str){
         return str.replaceAll("[A-Za-z&&[^AEIOUaeiou]]", "");
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    public static String consonants2(String str){
+        String s = "";
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i'|| str.charAt(i) == 'o'||
+                    str.charAt(i) == 'u' || str.charAt(i) == 'A' || str.charAt(i) == 'E'|| str.charAt(i) == 'I'||
+                    str.charAt(i) == 'O'|| str.charAt(i) == 'U' || str.charAt(i) >= 32 && str.charAt(i) <= 64) s += str.charAt(i);
+        }
+        return s;
+    }
 
     /* Question 11
     Write a method that takes a String and return String back with all uppercase letters removed
@@ -323,15 +320,34 @@ public class Solutions {
     ello orld!
      */
 
+    public static String removeUpper1(String str){
+        String s = "";
 
+        for (int i = 0; i < str.length(); i++) {
+            if(!Character.isUpperCase(str.charAt(i))) s += str.charAt(i);
+        }
+        return s;
+    }
 
+    public static String removeUpper2(String str){
+        char[] s1 = str.toCharArray();
+        String s = "";
 
+        for (char c : s1) {
+            if(!Character.isUpperCase(c)) s += c;
+        }
+        return s;
+    }
 
+    public static String removeUpper3(String str){
+        char[] c = str.toCharArray();
+        String s = "";
 
-
-
-
-
+        for (int i = 0; i < c.length; i++) {
+            if(!Character.isUpperCase(c[i])) s += c[i];
+        }
+        return s;
+    }
 
     /* Question 12
     Write a method that takes a String and return String back with all uppercase letters removed
@@ -341,15 +357,27 @@ public class Solutions {
     H W!
      */
 
+    public static String upper1(String str){
+        String s = "";
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isUpperCase(str.charAt(i)) || Character.isWhitespace(str.charAt(i)) || !Character.isLetterOrDigit(str.charAt(i))) s += str.charAt(i);
+        }
+        return s;
+    }
 
+    public static String upper2(String str){
+        return str.replaceAll("[a-z]", "");
+    }
 
+    public static String upper3(String str){
+        char[] s = str.toCharArray();
+        String s1 = "";
 
-
-
-
-
-
-
+        for (int i = 0; i < s.length; i++) {
+            if(!Character.isLetterOrDigit(s[i]) || Character.isUpperCase(s[i])) s1 += s[i];
+        }
+        return s1;
+    }
 
     /* Question 13
     Write a method that takes a positive int argument and prints all the numbers from 1 to given number
@@ -363,15 +391,11 @@ public class Solutions {
     5
      */
 
-
-
-
-
-
-
-
-
-
+    public static void print1(int a){
+        for (int i = 1; i <= a; i++) {
+            System.out.println(i);
+        }
+    }
 
     /* Question 14
     Write a method that takes a positive int argument and prints all the even numbers from 1 to given number
@@ -385,15 +409,11 @@ public class Solutions {
     10
      */
 
-
-
-
-
-
-
-
-
-
+    public static void evenNumbers(int a){
+        for (int i = 1; i <= a; i++) {
+            if(i % 2 == 0) System.out.println(i);
+        }
+    }
 
     /* Question 15
     Write a method that takes a positive int argument and prints all the odd numbers from 1 to given number
@@ -407,15 +427,11 @@ public class Solutions {
     9
      */
 
-
-
-
-
-
-
-
-
-
+    public static void oddNumber(int a) {
+        for (int i = 1; i <= a; i++) {
+            if (i % 2 == 1) System.out.println(i);
+        }
+    }
 
     /* Question 16
     Write a method that takes a positive int argument and prints all the numbers from 1 to given number
@@ -441,15 +457,14 @@ public class Solutions {
     FizzBuzz
      */
 
-
-
-
-
-
-
-
-
-
+    public static void FizzBuzz(int a){
+        for (int i = 1; i <= a; i++) {
+            if(i % 15 == 0) System.out.println("FizzBuzz");
+            else if(i % 3 == 0) System.out.println("Fizz");
+            else if(i % 5 == 0) System.out.println("Buzz");
+            else System.out.println(i);
+        }
+    }
 
     /* Question 17
     Write a method that takes an int array argument and returns the sum of all int elements
@@ -459,7 +474,21 @@ public class Solutions {
     7
      */
 
+    public static int sum1(int[] arr){
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += i;
+        }
+        return sum;
+    }
 
+    public static int sum2(int[] arr){
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        return sum;
+    }
 
 
 
