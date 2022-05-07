@@ -11,15 +11,9 @@ public class Solutions {
     17
      */
 
-
-
-
-
-
-
-
-
-
+    public static int sum1(int a, int b){
+        return a + b;
+    }
 
     /* Question 2
     METHOD-2 -> findProductOf2Numbers
@@ -30,15 +24,9 @@ public class Solutions {
     60
      */
 
-
-
-
-
-
-
-
-
-
+    public static int product1(int a, int b){
+        return a * b;
+    }
 
      /* Question 3
     METHOD-3 -> findSubtractionOf2Numbers
@@ -49,15 +37,9 @@ public class Solutions {
     7
      */
 
-
-
-
-
-
-
-
-
-
+    public static int subtract(int a, int b){
+        return a - b;
+    }
 
     /* Question 4
     METHOD-4 -> findDivisionOf2Numbers
@@ -68,15 +50,9 @@ public class Solutions {
     2
      */
 
-
-
-
-
-
-
-
-
-
+    public static int divide(int a, int b){
+        return a / b;
+    }
 
     /* Question 5
     METHOD-4 -> findRemainderOf2Numbers
@@ -87,15 +63,9 @@ public class Solutions {
     2
      */
 
-
-
-
-
-
-
-
-
-
+    public static int remainder(int a, int b){
+        return a % b;
+    }
 
     /* Question 6
     METHOD-1 -> isPositive
@@ -107,15 +77,9 @@ public class Solutions {
     true
      */
 
-
-
-
-
-
-
-
-
-
+    public static boolean positive(int a){
+        return a > 0;
+    }
 
     /* Question 7
     METHOD-2 -> isNegative
@@ -127,15 +91,9 @@ public class Solutions {
     true
      */
 
-
-
-
-
-
-
-
-
-
+    public static boolean negative(int a){
+        return a < 0;
+    }
 
     /* Question 8
     METHOD-3 -> isZero
@@ -147,15 +105,9 @@ public class Solutions {
     true
      */
 
-
-
-
-
-
-
-
-
-
+    public static boolean zero(int a){
+        return a == 0;
+    }
 
     /* Question 9
     METHOD-1 -> findGreatestOf2Numbers1
@@ -167,15 +119,9 @@ public class Solutions {
     5
      */
 
-
-
-
-
-
-
-
-
-
+    public static int greatestNumber(int a, int b){
+        return Math.max(a, b);
+    }
 
     /* Question 10
     METHOD-2 -> findGreatestOf2Numbers2
@@ -186,18 +132,13 @@ public class Solutions {
     EXPECTED OUTPUT:
     5
 
-     // Use if else statements to find max value of 2 int variables as below
+    Use if else statements to find max value of 2 int variables as below
      */
 
-
-
-
-
-
-
-
-
-
+    public static int greatNumberIE(int a, int b){
+        if(a >= b) return a;
+        return b;
+    }
 
     /* Question 11
     METHOD-3 -> findGreatestOf3Numbers1
@@ -209,15 +150,9 @@ public class Solutions {
     5
      */
 
-
-
-
-
-
-
-
-
-
+    public static int greatestNumber1(int a, int b, int c){
+        return Math.max(Math.max(a, b), c);
+    }
 
     /* Question 12
     METHOD-4 -> findGreatestOf3Numbers2
@@ -227,17 +162,16 @@ public class Solutions {
     3, 3, 5
     EXPECTED OUTPUT:
     5
+
+    Use if else statements to find max value of 2 int variables as below
      */
 
+    public static int greatestNumber2(int a, int b, int c) {
 
-
-
-
-
-
-
-
-
+        if(a >= b && a >= c) return a;
+        else if(b >= a && b >= c) return b;
+        return c;
+    }
 
     /* Question 13
     METHOD-1 -> findSmallestOf2Numbers1
@@ -249,15 +183,9 @@ public class Solutions {
     1
      */
 
-
-
-
-
-
-
-
-
-
+    public static int smallestNumber1(int a, int b){
+        return Math.min(a, b);
+    }
 
     /* Question 14
     METHOD-2 -> findSmallestOf2Numbers2
@@ -267,17 +195,15 @@ public class Solutions {
     1, 7
     EXPECTED OUTPUT:
     1
+
+    Use if else statements to find min value of 2 int variables as below
      */
 
+    public static int smallestNumber2(int a, int b) {
 
-
-
-
-
-
-
-
-
+        if(a <= b) return a;
+        return b;
+    }
 
     /* Question 15
     METHOD-3 -> findSmallestOf3Numbers1
@@ -289,15 +215,9 @@ public class Solutions {
     1
      */
 
-
-
-
-
-
-
-
-
-
+    public static int smallestOf3N(int a, int b, int c){
+        return Math.min(Math.min(a, b), c);
+    }
 
     /* Question 16
     METHOD-4 -> findSmallestOf3Numbers2
@@ -309,18 +229,13 @@ public class Solutions {
     1
 
      // Use if else statements to find min value of 3 int variables as below
-
      */
 
-
-
-
-
-
-
-
-
-
+    public static int smallestOf3N2(int a, int b, int c){
+        if(a <= b && a <= c) return a;
+        else if(b <= a && b <= c) return b;
+        return c;
+    }
 
     /* Question 17
     Write a method that takes 3 int arguments and returns the middle number
@@ -331,15 +246,17 @@ public class Solutions {
     4
      */
 
+    public static int middleNumber(int a, int b, int c){
+        if(a == b || b == c) return b;
+        else if(a == c) return a;
 
+        int max = Math.max(Math.max(a, b), c);
+        int min = Math.min(Math.min(a, b), c);
 
-
-
-
-
-
-
-
+        if(a != max && a != min) return a;
+        else if(b != max && b != min) return b;
+        return c;
+    }
 
     /*Question 18
     Write a method that takes a String argument and returns the String back with first and last word swapped
@@ -349,4 +266,11 @@ public class Solutions {
     EXPECTED OUTPUT:
     fun is Java
      */
+
+    public static String swapFirstLast(String str){
+        String first = str.substring(0, str.indexOf(" "));
+        String middle = str.substring(str.indexOf(" ") + 1, str.lastIndexOf(" "));
+        String last = str.substring(str.lastIndexOf(" ") + 1);
+        return last + " " + middle + " " + first;
+    }
 }

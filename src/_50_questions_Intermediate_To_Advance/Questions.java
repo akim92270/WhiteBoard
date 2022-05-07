@@ -1,6 +1,6 @@
 package _50_questions_Intermediate_To_Advance;
 
-public class Solve {
+public class Questions {
     /* Question 1
     Write a method that takes 3 int arguments and returns the greatest number
     NOTE: 2 or 3 numbers being same is okay

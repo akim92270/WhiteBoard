@@ -1,6 +1,6 @@
 package _16_questions_BeginnerToAdvanced;
 
-public class Solve {
+public class Questions {
     /* Question 1
     METHOD-1 -> findSumOf2Numbers
     Write a method that takes 2 int arguments and returns their sum
