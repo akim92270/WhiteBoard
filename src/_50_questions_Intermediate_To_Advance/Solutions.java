@@ -477,7 +477,7 @@ public class Solutions {
     public static int sum1(int[] arr){
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += i;
+            sum += arr[i];
         }
         return sum;
     }
@@ -490,14 +490,6 @@ public class Solutions {
         return sum;
     }
 
-
-
-
-
-
-
-
-
     /* Question 18
     Write a method that takes an int array argument and returns the product of all int elements
     TEST DATA:
@@ -506,13 +498,21 @@ public class Solutions {
     60
      */
 
+    public static int product1(int[] a){
+        int product = 1;
+        for (int i : a) {
+            product *= i;
+        }
+        return product;
+    }
 
-
-
-
-
-
-
+    public static int product2(int[] a){
+        int product = 1;
+        for (int i = 0; i < a.length; i++) {
+            product *= a[i];
+        }
+        return product;
+    }
 
     /* Question 19
     Write a method that takes an int array argument and returns the average of all int elements
@@ -522,15 +522,22 @@ public class Solutions {
     2
      */
 
+    public static int average1(int[] a){
+        int sum = 0;
+        for (int i : a) {
+            sum += i;
+        }
+        return sum / a.length;
+    }
 
+    public static int average2(int[] a){
+        int sum = 0;
 
-
-
-
-
-
-
-
+        for (int i = 0; i < a.length; i++) {
+            sum += i;
+        }
+        return sum / a.length;
+    }
 
     /* Question 20
     Write a method that takes an int array argument and returns the count of zeros
@@ -540,15 +547,22 @@ public class Solutions {
     2
      */
 
+    public static int zero1(int[] a){
+        int count = 0;
+        for (int i : a) {
+            if(i == 0) count++;
+        }
+        return count;
+    }
 
+    public static int zero2(int[] a){
+        int count = 0;
 
-
-
-
-
-
-
-
+        for (int i = 0; i < a.length; i++) {
+            if(a[i] == 0) count++;
+        }
+        return count;
+    }
 
     /* Question 21
     Write a method that takes an int array argument and returns the count of positive numbers
@@ -558,15 +572,22 @@ public class Solutions {
     3
      */
 
+    public static int positiveNumber1(int[] n){
+        int count = 0;
+        for (int i : n) {
+            if(i > 0) count++;
+        }
+        return count;
+    }
 
+    public static int positiveNumber2(int[] a){
+        int count = 0;
 
-
-
-
-
-
-
-
+        for (int i = 0; i < a.length; i++) {
+            if(a[i] > 0) count++;
+        }
+        return count;
+    }
 
     /* Question 22
     Write a method that takes an int array argument and returns the count of negative numbers
@@ -576,15 +597,22 @@ public class Solutions {
     2
      */
 
+    public static int negativeNumber1(int[] n){
+        int count = 0;
+        for (int i : n) {
+            if(i < 0) count++;
+        }
+        return count;
+    }
 
+    public static int negativeNumber2(int[] a){
+        int count = 0;
 
-
-
-
-
-
-
-
+        for (int i = 0; i < a.length; i++) {
+            if(a[i] < 0) count++;
+        }
+        return count;
+    }
 
     /* Question 23
     Write a method that takes an int array argument and returns the count of numbers greater than 10
@@ -594,15 +622,22 @@ public class Solutions {
     2
      */
 
+    public static int greaterThan10Number1(int[] n){
+        int count = 0;
+        for (int i : n) {
+            if(i > 10) count++;
+        }
+        return count;
+    }
 
+    public static int greaterThan10Number2(int[] a){
+        int count = 0;
 
-
-
-
-
-
-
-
+        for (int i = 0; i < a.length; i++) {
+            if(a[i] > 10) count++;
+        }
+        return count;
+    }
 
     /* Question 24
     Write a method that takes an int array argument and returns the count of prime numbers
@@ -615,6 +650,7 @@ public class Solutions {
     EXPECTED OUTPUT:
     2
      */
+
 
 
 
