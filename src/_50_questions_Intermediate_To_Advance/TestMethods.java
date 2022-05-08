@@ -1,13 +1,21 @@
 package _50_questions_Intermediate_To_Advance;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class TestMethods {
     public static void main(String[] args) {
 
-        int[] product = {-3, 15, 44, 0, -2};
-        System.out.println(Solutions.greaterThan10Number1((product)));
-        System.out.println(Solutions.greaterThan10Number2((product)));
+        ArrayList<Integer> product = new ArrayList<>();
+        product.add(0);
+        product.add(5);
+        product.add(4);
+        product.add(0);
+        product.add(0);
+        String str = "civic";
+        System.out.println(product.get(0));
 
-
+        System.out.println(Solutions.removeDup(product));
 
 
 

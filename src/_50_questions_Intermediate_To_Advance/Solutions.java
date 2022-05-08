@@ -652,16 +652,6 @@ public class Solutions {
      */
 
 
-
-
-
-
-
-
-
-
-
-
     /* Question 25
     Write a method that takes an int array argument and returns the count of even numbers
     TEST DATA:
@@ -670,15 +660,13 @@ public class Solutions {
     3
      */
 
-
-
-
-
-
-
-
-
-
+    public static int countEven(int[] a){
+        int count = 0;
+        for (int i : a) {
+            if(i % 2 == 0) count++;
+        }
+        return count;
+    }
 
     /* Question 26
     Write a method that takes an int array argument and returns the count of odd numbers
@@ -688,15 +676,13 @@ public class Solutions {
     2
      */
 
-
-
-
-
-
-
-
-
-
+    public static int countOdd(int[] a){
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if(a[i] % 2 == 1) count++;
+        }
+        return count;
+    }
 
     /* Question 27
     Write a method that takes an int array argument and returns the array back with all duplicates removed
@@ -707,16 +693,6 @@ public class Solutions {
     [0, 4, 5]
      */
 
-
-
-
-
-
-
-
-
-
-
     /* Question 28
     Write a method that takes a String array argument and returns the array back with all duplicates removed
     NOTE: the order of elements returned is not an issue.
@@ -726,15 +702,9 @@ public class Solutions {
     [bar, 123, foo]
      */
 
-
-
-
-
-
-
-
-
-
+    public static String[] removeDup(String[] arr){
+        return new HashSet<>(Arrays.asList(arr)).toArray(new String[0]);
+    }
 
     /* Question 29
     Write a method that takes a String argument and returns a boolean. It will return true if given String is palindrome, and false otherwise
@@ -750,18 +720,12 @@ public class Solutions {
     true
      */
 
-
-
-
-
-
-
-
-
-
+    public static boolean isPalindrome1(String str){
+        return str.equals(new StringBuilder(str).reverse().toString());
+    }
 
     /* Question 30
-    Write a method that takes a String argument and returns a boolean. It will return true if given String is palindrome, and false otherwise
+    Write a method that takes a String argument and returns a boolean. It will return true if given String is Anagram, and false otherwise
     Anagram: a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
     Ex: listen-silent | cinema-iceman
     TEST DATA:
@@ -774,15 +738,15 @@ public class Solutions {
     true
      */
 
+    public static boolean isAnagram(String s1, String s2){
+        char[] a = s1.toCharArray();
+        char[] b = s1.toCharArray();
 
+        Arrays.sort(a);
+        Arrays.sort(b);
 
-
-
-
-
-
-
-
+        return Arrays.equals(a,b);
+    }
 
     /* Question 31
     Write a method that takes an Integer ArrayList argument and returns the list back with all duplicates removed
@@ -793,15 +757,9 @@ public class Solutions {
     [0, 4, 5]
      */
 
-
-
-
-
-
-
-
-
-
+    public static ArrayList<Integer> removeDup(ArrayList<Integer> num){
+        return new ArrayList<>(new HashSet<>(num));
+    }
 
     /* Question 32
     Write a method that takes a String ArrayList argument and returns the list back with all duplicates removed
