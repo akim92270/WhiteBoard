@@ -1,6 +1,8 @@
 package _50_questions_Intermediate_To_Advance;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Solutions {
     /* Question 1
@@ -176,10 +178,9 @@ public class Solutions {
     }
 
     public static String noSpace3(String str) {
-        char[] noSpace = str.toCharArray();
         String noSpaces = "";
 
-        for (char c : noSpace) {
+        for (char c : str.toCharArray()) {
             if(!Character.isWhitespace(c)) noSpaces += c;
         }
         return noSpaces;
@@ -222,9 +223,8 @@ public class Solutions {
     }
 
     public static String removeLetters3(String str){
-        char[] array = str.toCharArray();
         String rL = "";
-        for (char c : array) {
+        for (char c : str.toCharArray()) {
             if(!Character.isLetter(c)) rL += c;
         }
         return rL;
@@ -757,7 +757,7 @@ public class Solutions {
     [0, 4, 5]
      */
 
-    public static ArrayList<Integer> removeDup(ArrayList<Integer> num){
+    public static ArrayList<Integer> removeDup1(ArrayList<Integer> num){
         return new ArrayList<>(new HashSet<>(num));
     }
 
@@ -770,15 +770,9 @@ public class Solutions {
     [bar, 123, foo]
      */
 
-
-
-
-
-
-
-
-
-
+    public static ArrayList<String> removeDup2(ArrayList<String> arr){
+        return new ArrayList<>(new HashSet<>(arr));
+    }
 
     /* Question 33
     Write method that takes an int argument and prints the Fibonacci series of given number
@@ -815,15 +809,31 @@ public class Solutions {
     2
      */
 
+    public static int space1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isWhitespace(str.charAt(i))) count++;
+        }
+        return count;
+    }
 
+    public static int space2(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (char c : a) {
+            if(Character.isWhitespace(c)) count++;
+        }
+        return count;
+    }
 
-
-
-
-
-
-
-
+    public static int space3(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if(Character.isWhitespace(a[i])) count++;
+        }
+        return count;
+    }
 
     /* Question 35
     Write a method that takes a String argument and returns the count of letters as an int
@@ -833,15 +843,31 @@ public class Solutions {
     10
      */
 
+    public static int countLetters1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isLetter(str.charAt(i))) count++;
+        }
+        return count;
+    }
 
+    public static int countLetters2(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (char c : a) {
+            if(Character.isLetter(c)) count++;
+        }
+        return count;
+    }
 
-
-
-
-
-
-
-
+    public static int countLetters3(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if(Character.isLetter(a[i])) count++;
+        }
+        return count;
+    }
 
     /* Question 36
     Write a method that takes a String argument and returns the count of digits as an int
@@ -851,15 +877,31 @@ public class Solutions {
     4
      */
 
+    public static int countDigits1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isDigit(str.charAt(i))) count++;
+        }
+        return count;
+    }
 
+    public static int countDigit2(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (char c : a) {
+            if(Character.isDigit(c)) count++;
+        }
+        return count;
+    }
 
-
-
-
-
-
-
-
+    public static int countDigit3(String str){
+        char[] a = str.toCharArray();
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if(Character.isDigit(a[i])) count++;
+        }
+        return count;
+    }
 
     /* Question 37
     Write a method that takes a String argument and returns the count of specials as an int
@@ -869,15 +911,22 @@ public class Solutions {
     2
      */
 
+    public static int isSpecial1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(!Character.isLetterOrDigit(str.charAt(i)) && (!Character.isWhitespace(str.charAt(i)))) count++;
+        }
+        return count;
+    }
 
+    public static int isSpecial2(String str){
+        int count = 0;
 
-
-
-
-
-
-
-
+        for (char c : str.toCharArray()) {
+            if(!Character.isWhitespace(c) && (!Character.isLetterOrDigit(c))) count++;
+        }
+        return count;
+    }
 
     /* Question 38
     Write a method that takes a String argument and returns the count of vowels as an int
@@ -887,33 +936,44 @@ public class Solutions {
     5
      */
 
+    public static int vowels1(String str){
+        int count = 0;
+        for (int i = 0; i < str.toLowerCase().length(); i++) {
+            if(str.charAt(i)== 'a'|| str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') count++;
+        }
+        return count;
+    }
 
+    public static int vowels2(String str){
+        int count = 0;
 
+        Pattern pattern = Pattern.compile("[AEIOUaeiou]");
 
-
-
-
-
-
-
+        for(char e : str.toCharArray()){
+            Matcher matcher = pattern.matcher(String.valueOf(e));
+            if(matcher.matches()) count++;
+        }
+        return count;
+    }
 
     /* Question 39
     Write a method that takes a String argument and returns the count of consonants as an int
     TEST DATA:
     I like Java
     EXPECTED OUTPUT:
-    6
+    5
      */
 
+    public static int consonants4(String str){
+        int count = 0;
+        Pattern pattern = Pattern.compile("[A-Za-z&&[^aeiouAEIOU]]");
 
-
-
-
-
-
-
-
-
+        for(char e : str.toCharArray()){
+            Matcher matcher = pattern.matcher(String.valueOf(e));
+            if(matcher.matches()) count++;
+        }
+        return count;
+    }
 
     /* Question 40
     Write a method that takes a String argument and returns the count of upper cases as an int
@@ -923,15 +983,21 @@ public class Solutions {
     1
      */
 
+    public static int uppercase1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isUpperCase(str.charAt(i))) count++;
+        }
+        return count;
+    }
 
-
-
-
-
-
-
-
-
+    public static int uppercase2(String str){
+        int count = 0;
+        for (char o : str.toCharArray()) {
+            if(Character.isUpperCase(o)) count++;
+        }
+        return count;
+    }
 
     /* Question 41
     Write a method that takes a String argument and returns the count of lower cases as an int
@@ -941,15 +1007,32 @@ public class Solutions {
     8
      */
 
+    public static int lowercase1(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isLowerCase(str.charAt(i))) count++;
+        }
+        return count;
+    }
 
+    public static int lowercase2(String str){
+        int count = 0;
+        for(char e : str.toCharArray()){
+            if(Character.isLowerCase(e)) count++;
+        }
+        return count;
+    }
 
+    public static int lowercase3(String str){
+        int count = 0;
+        Pattern pattern = Pattern.compile("[a-z]");
 
-
-
-
-
-
-
+        for(char e : str.toCharArray()){
+            Matcher matcher = pattern.matcher(String.valueOf(e));
+            if(matcher.matches()) count++;
+        }
+        return count;
+    }
 
     /* Question 42
     Write a method that takes a String as argument and returns the count of words as an int
@@ -959,15 +1042,18 @@ public class Solutions {
     3
      */
 
+    public static int words1(String str){
+        int words = 1;
+        for (int i = 0; i < str.length(); i++) {
+            if(Character.isWhitespace(str.charAt(i))) words++;
+        }
+        return words;
+    }
 
-
-
-
-
-
-
-
-
+    public static int words2(String str){
+        String[] words = str.trim().split("\\s+");
+        return words.length;
+    }
 
     /* Question 43
     Write a method that takes a String as argument and returns the String back with all extra spaces removed
