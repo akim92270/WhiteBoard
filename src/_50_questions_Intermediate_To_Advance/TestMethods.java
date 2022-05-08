@@ -18,7 +18,7 @@ public class TestMethods {
         String str2 = "Java is fun";
         System.out.println(Solutions.space1(str1));
         System.out.println(Solutions.space2(str1));
-        System.out.println(Solutions.lowercase3(str2));
+
 
 
 

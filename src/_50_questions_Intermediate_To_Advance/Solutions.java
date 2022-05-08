@@ -1063,15 +1063,9 @@ public class Solutions {
     Java is fun
      */
 
-
-
-
-
-
-
-
-
-
+    public static String removeSpace(String str){
+        return str.trim().replaceAll("\\s+", " ");
+    }
 
     /* Question 44
     Write a method that takes a String as argument and returns the String back with each word reversed in the same place
@@ -1080,7 +1074,6 @@ public class Solutions {
     EXPECTED OUTPUT:
     avaJ si nuf
      */
-
 
 
 
